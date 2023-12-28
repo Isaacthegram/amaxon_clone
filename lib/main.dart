@@ -7,6 +7,8 @@ import 'package:amaxonclone/router.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'common/widgets/bottom_bar.dart';
+
 void main() {
   runApp(MultiProvider(providers: [
     ChangeNotifierProvider(create: (context) => UserProvider(),),
@@ -50,7 +52,8 @@ class _MyAppState extends State<MyApp> {
         useMaterial3: true,
       ),
       onGenerateRoute: (settings) => generateRoute(settings),
-      home: Provider.of<UserProvider>(context).user.token.isNotEmpty ? const HomeScreen() : const AuthScreen(),
+      home: Provider.of<UserProvider>(context).user.token.isNotEmpty ?
+      const BottomBar() : const BottomBar(),
     );
   }
 }
