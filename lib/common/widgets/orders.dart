@@ -14,11 +14,12 @@ class _OrdersState extends State<Orders> {
 
   //temporary list
 
-  List list = [
+  List list =
+  [
     'https://images.unsplash.com/photo-1634848860108-6d8368f5a0b3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOXx8fGVufDB8fHx8fA%3D%3D'
-        'https://images.unsplash.com/photo-1634848860108-6d8368f5a0b3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOXx8fGVufDB8fHx8fA%3D%3D'
-        'https://images.unsplash.com/photo-1634848860108-6d8368f5a0b3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOXx8fGVufDB8fHx8fA%3D%3D'
-        'https://images.unsplash.com/photo-1634848860108-6d8368f5a0b3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOXx8fGVufDB8fHx8fA%3D%3D'
+    'https://images.unsplash.com/photo-1634848860108-6d8368f5a0b3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOXx8fGVufDB8fHx8fA%3D%3D'
+    'https://images.unsplash.com/photo-1634848860108-6d8368f5a0b3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOXx8fGVufDB8fHx8fA%3D%3D'
+    'https://images.unsplash.com/photo-1634848860108-6d8368f5a0b3?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxOXx8fGVufDB8fHx8fA%3D%3D'
   ];
 
   @override
@@ -50,6 +51,7 @@ class _OrdersState extends State<Orders> {
           height: 170,
           padding: const EdgeInsets.only(left: 10, top: 20, right: 0,),
           child: ListView.builder(
+            scrollDirection: Axis.horizontal,
             itemCount: list.length,
               itemBuilder: (context, index) {
               return SingleProduct(

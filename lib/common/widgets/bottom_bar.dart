@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../constants/global_variables.dart';
 import 'package:badges/badges.dart' as badges;
-
 import '../../features/account/screens/account_screen.dart';
 import '../../features/home/screens/home_screen.dart';
 

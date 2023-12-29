@@ -1,3 +1,4 @@
+import 'package:amaxonclone/features/admin/screens/add_product_screen.dart';
 import 'package:amaxonclone/features/auth/screens/auth_screen.dart';
 import 'package:amaxonclone/features/home/screens/home_screen.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +23,12 @@ Route<dynamic> generateRoute(RouteSettings routeSettings) {
       return MaterialPageRoute(
         settings: routeSettings,
         builder: (_) => const BottomBar(),
+      );
+
+    case AddProduct.routeName:
+      return MaterialPageRoute(
+        settings: routeSettings,
+        builder: (_) => const AddProduct(),
       );
 
     default:

@@ -1,4 +1,5 @@
 import 'package:amaxonclone/constants/global_variables.dart';
+import 'package:amaxonclone/features/admin/screens/admin_screen.dart';
 import 'package:amaxonclone/features/auth/screens/auth_screen.dart';
 import 'package:amaxonclone/features/auth/services/auth_service.dart';
 import 'package:amaxonclone/features/home/screens/home_screen.dart';
@@ -29,7 +30,7 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    authService.getUserData(context: context);
+    authService.getUserData(context);
   }
   // This widget is the root of your application.
   @override
@@ -52,8 +53,11 @@ class _MyAppState extends State<MyApp> {
         useMaterial3: true,
       ),
       onGenerateRoute: (settings) => generateRoute(settings),
-      home: Provider.of<UserProvider>(context).user.token.isNotEmpty ?
-      const BottomBar() : const BottomBar(),
+      home: Provider.of<UserProvider>(context).user.token.isNotEmpty
+          ? Provider.of<UserProvider>(context).user.type == 'user'
+          ? const BottomBar()
+          : const AdminScreen()
+          : const AdminScreen()
     );
   }
 }
