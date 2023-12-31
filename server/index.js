@@ -3,7 +3,9 @@ const express = require("express");
 const mongoose = require('mongoose');
 //import from other files
 const authRouter = require("./routes/auth");
+const adminRouter = require("./routes/admin");
 //import 'package:flutter/screens/auth.dart'
+
 
 
 //initialize init
@@ -15,6 +17,7 @@ const DB = "mongodb+srv://jaydenanireh:sendokai@cluster0.eqhp5e0.mongodb.net/?re
 //middleware
 app.use(express.json());
 app.use(authRouter);
+app.use(adminRouter);
 
 //connections
 mongoose.connect(DB).then(() => {
