@@ -7,7 +7,6 @@ import 'package:amaxonclone/providers/user_provider.dart';
 import 'package:amaxonclone/router.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
 import 'common/widgets/bottom_bar.dart';
 
 void main() {
@@ -61,3 +60,10 @@ class _MyAppState extends State<MyApp> {
     );
   }
 }
+
+
+
+
+
+
+

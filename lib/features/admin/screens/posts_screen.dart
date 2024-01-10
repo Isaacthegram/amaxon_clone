@@ -1,3 +1,4 @@
+import 'package:amaxonclone/common/widgets/single_product.dart';
 import 'package:amaxonclone/features/admin/screens/add_product_screen.dart';
 import 'package:amaxonclone/features/admin/services/admin_service.dart';
 import 'package:flutter/material.dart';
@@ -39,10 +40,34 @@ class _PostScreenState extends State<PostScreen> {
     return products == null
         ? const Loader()
         : Scaffold(
-      body: const Center(
-        child: Text(
-          'Products',
-        ),
+      body: GridView.builder(
+        itemCount: products!.length,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+          itemBuilder: (context, index) {
+            final productData = products![index];
+            return Column(
+              children: [
+                SizedBox(
+                  height: 140,
+                  child: SingleProduct(
+                      image: productData.images[0],
+                  ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Expanded(
+                        child: Text(productData.name, overflow: TextOverflow.ellipsis, maxLines: 2,),
+                    ),
+                    IconButton(
+                        onPressed: () {},
+                        icon: const Icon(Icons.delete_outline,),
+                    ),
+                  ],
+                )
+              ],
+            );
+          }
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: navigateToAddProduct,
