@@ -34,22 +34,22 @@ class AdminService {
         imageUrls.add(res.secureUrl);
       }
 
-      Product product = Product(
-          name: name,
-          description: description,
-          quantity: quantity,
-          images: imageUrls,
-          category: category,
-          price: price
-      );
+      var product = {
+        'name': name,
+        'description': description,
+        'quantity': quantity,
+        'images': imageUrls,
+        'category': category,
+        'price': price
+      };
 
       http.Response res = await http.post(
           Uri.parse('$uri/admin/add-product'),
           headers: {
-            'Content-Type': 'application/json; charset=UTF-8',
+            'Content-Type': 'application/json',
             'x-auth-token' : userProvider.user.token,
       },
-        body: product.toJson(),
+        body: jsonEncode(product),
         
       );
       

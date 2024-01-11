@@ -2,7 +2,6 @@ import 'package:amaxonclone/common/widgets/single_product.dart';
 import 'package:amaxonclone/features/admin/screens/add_product_screen.dart';
 import 'package:amaxonclone/features/admin/services/admin_service.dart';
 import 'package:flutter/material.dart';
-
 import '../../../common/widgets/loader.dart';
 import '../../../models/product.dart';
 
